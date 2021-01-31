@@ -16,15 +16,8 @@ RSpec.describe User, type: :model do
         expect(user).to respond_to(:role)
     end
 
-    # Not sure what to do with these types of things...
-    # it 'has an encrypted password' do
-    #     user = User.new
-    #     expect(user).to respond_to(:encrypted_password)
-    # end
-
-    # it 'has a reset password token' do
-    #     user = User.new
-    #     expect(user).to respond_to(:reset_password_token)
-    # end
+    it 'has an organization' do
+        expect(user).to respond_to(:organization)
+    end
 
 end

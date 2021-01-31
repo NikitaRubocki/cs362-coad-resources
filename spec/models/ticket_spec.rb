@@ -23,19 +23,17 @@ RSpec.describe Ticket, type: :model do
     it 'can be closed' do
         expect(ticket).to respond_to(:closed)
     end
-    # You mentioned that we can test generally, like a user should be 
-    # part of an organization.  Do we then have to bring in the organization
-    # module and add a User to it?
-    # it 'has an organization_id' do
-    #     expect(ticket).to respond_to(:organization_id)
-    # end
 
-    # it 'has a resource category' do
-    #     expect(ticket).to respond_to(:resource_category_id)
-    # end
+    it 'has an organization' do
+        expect(ticket).to respond_to(:organization)
+    end
 
-    # it 'has a region_id' do
-    #     expect(ticket).to respond_to(:region_id)
-    # end
+    it 'has a resource category' do
+        expect(ticket).to respond_to(:resource_category)
+    end
+
+    it 'has a region' do
+        expect(ticket).to respond_to(:region)
+    end
 
 end
