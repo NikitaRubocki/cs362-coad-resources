@@ -14,4 +14,10 @@ RSpec.describe Ticket, type: :model do
         it { is_expected.to respond_to(:description) }
     end
 
+    describe 'associations' do
+        it { should belong_to(:region) }
+        it { should belong_to(:resource_category) }
+        # it { should belong_to(:organization).optional }
+    end
+
 end

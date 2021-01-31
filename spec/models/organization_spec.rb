@@ -25,4 +25,10 @@ RSpec.describe Organization, type: :model do
         it { is_expected.to respond_to(:agreement_eight) }
     end
 
+    describe 'associations' do
+        it { is_expected.to have_many(:users) }
+        it { is_expected.to have_many(:tickets) }
+        it { is_expected.to have_and_belong_to_many(:resource_categories) }
+    end
+
 end

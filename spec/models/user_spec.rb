@@ -8,4 +8,8 @@ RSpec.describe User, type: :model do
         it { is_expected.to respond_to(:organization) }
     end
 
+    # it "belongs to organization" do
+    #     expect(subject).to belong_to(:organization).optional
+    # end
+
 end
