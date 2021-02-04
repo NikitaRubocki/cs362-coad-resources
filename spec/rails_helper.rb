@@ -35,6 +35,9 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
 
+  # Remove need for FactoryBot.create (instead just create)
+  config.include FactoryBot::Syntax::Methods
+
   config.before(:suite) do
     if config.use_transactional_fixtures?
       raise(<<-MSG)
