@@ -9,6 +9,10 @@ FactoryBot.define do
     primary_name { 'Primary Name' }
     secondary_name { 'Secondary Name' }
     secondary_phone { '555-555-5555' }
+
+    trait 'bad_email' do
+      email { 'bad email' }
+    end
   end
 
 end

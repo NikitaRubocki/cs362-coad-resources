@@ -44,7 +44,8 @@ RSpec.describe Organization, type: :model do
     it { should validate_length_of(:description).is_at_most(1020).on(:create) }
     it { should validate_uniqueness_of(:email).case_insensitive}
     it { should validate_uniqueness_of(:name).case_insensitive}
-    # email regex?
+    let (:bad_org) { build_stubbed(:user, :bad_email) }
+    specify { expect(bad_org).to_not be_valid() }
   end
 
 end
