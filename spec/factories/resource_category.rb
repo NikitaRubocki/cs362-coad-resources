@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   sequence :name do |n|
-    "Fake Name #{n}"
+    "Fake Resource #{n}"
   end
 
   factory :resource_category do
