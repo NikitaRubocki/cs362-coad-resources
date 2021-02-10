@@ -48,4 +48,27 @@ RSpec.describe Organization, type: :model do
     specify { expect(bad_org).to_not be_valid() }
   end
 
+  describe '#' do
+    let (:org) { create(:organization, name: 'Fake') }
+
+    it 'becomes approved when approved' do
+      org.approve
+      expect(org.status).to eq('approved')
+    end
+
+    it 'becomes rejected when rejected' do
+      org.reject
+      expect(org.status).to eq('rejected')
+    end
+
+    it 'is sets a default status of submitted' do
+      org.set_default_status
+      expect(org.status).to eq('submitted')
+    end
+
+    it 'it has a string representation that is its name' do
+      expect(org.to_s).to eq('Fake')
+    end
+  end
+
 end

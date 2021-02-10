@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:organization) }
   end
 
-  it "belongs to organization" do
+  it 'belongs to organization' do
     expect(subject).to belong_to(:organization).optional
   end
 
@@ -20,6 +20,19 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of(:email).case_insensitive}
     let (:bad_user) { build_stubbed(:user, :bad_email) }
     specify { expect(bad_user).to_not be_valid() }
+  end
+
+  describe '#' do
+    let (:user) { create(:user, email: 'fake@test.com')}
+
+    it 'is sets a default role of organization' do
+      user.set_default_role
+      expect(user.role).to eq('organization')
+    end
+
+    it 'it has a string representation that is its name' do
+      expect(user.to_s).to eq('fake@test.com')
+    end
   end
 
 end

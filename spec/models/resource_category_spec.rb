@@ -43,12 +43,6 @@ RSpec.describe ResourceCategory, type: :model do
     it 'returns a ResourceCategory with the name Unspecified' do
       expect(ResourceCategory.unspecified.name).to eq('Unspecified')
     end
-
-    it 'is inactive when its active attribute is false' do
-      expect(inactive_rc).to be_inactive
-      inactive_rc.active = true
-      expect(inactive_rc.inactive?).to be_falsy
-    end
   
     it 'becomes active when activated' do
       expect(inactive_rc.active).to be_falsy
@@ -60,6 +54,12 @@ RSpec.describe ResourceCategory, type: :model do
       expect(active_rc.active).to be_truthy
       active_rc.deactivate
       expect(active_rc.active).to be_falsy
+    end
+
+    it 'is inactive when its active attribute is false' do
+      expect(inactive_rc).to be_inactive
+      inactive_rc.active = true
+      expect(inactive_rc.inactive?).to be_falsy
     end
   
     it 'it has a string representation that is its name' do

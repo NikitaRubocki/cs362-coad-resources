@@ -103,4 +103,22 @@ RSpec.describe Ticket, type: :model do
       end
     end
   end
+
+  describe '#' do
+    let (:ticket) { create(:ticket, :open) }
+
+    it 'is open when its closed attribute is false' do
+      expect(ticket.open?).to be_truthy
+      ticket.closed = true
+      expect(ticket.open?).to be_falsy
+    end
+
+    it 'is captured if there is an associated organization' do
+      expect(ticket.captured?).to be_truthy
+    end
+
+    it 'it has a string representation that is its id' do
+      expect(Ticket.new(id: 1).to_s).to eq('Ticket 1')
+    end
+  end
 end
