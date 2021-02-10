@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :ticket do
-    name { Faker::Beer.brand }
+    name { Faker::Lorem.word }
     phone { '+15414541232' }
     description { 'Lorem ipsum' }
     organization
