@@ -20,7 +20,7 @@ RSpec.describe Region, type: :model do
 
   describe '#' do
     it 'returns a ResourceCategory with the name Unspecified' do
-      expect(ResourceCategory.unspecified.name).to eq('Unspecified')
+      expect(Region.unspecified.name).to eq('Unspecified')
     end
   
     it 'has a string representation that is its name' do
