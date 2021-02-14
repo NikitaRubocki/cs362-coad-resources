@@ -4,7 +4,6 @@ FactoryBot.define do
     sequence(:name) { |i| "Fake Organization #{i}" }
     email { Faker::Internet.email }
     phone { '541-398-3298' }
-    status { 1 }
     description { 'Lorem ipsum' }
     primary_name { 'Primary Name' }
     secondary_name { 'Secondary Name' }
@@ -12,6 +11,14 @@ FactoryBot.define do
 
     trait 'bad_email' do
       email { 'bad email' }
+    end
+
+    trait 'approved' do
+      status { :approved }
+    end
+
+    trait 'rejected' do
+      status { :rejected }
     end
   end
 
