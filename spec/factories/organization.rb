@@ -1,7 +1,11 @@
 FactoryBot.define do
 
+  sequence :org_name do |n|
+    "Fake Organization #{n}"
+  end
+
   factory :organization do
-    name { Faker::Company.name }
+    name { generate(:org_name) }
     email { Faker::Internet.email }
     phone { '541-398-3298' }
     status { 1 }
