@@ -1,11 +1,7 @@
 FactoryBot.define do
 
-  sequence :ticket_name do |n|
-    "Fake Ticket #{n}"
-  end
-
   factory :ticket do
-    name { generate(:ticket_name) }
+    sequence(:name) { |i| "Fake Ticket #{i}" }
     phone { '+15414541232' }
     description { 'Lorem ipsum' }
     organization

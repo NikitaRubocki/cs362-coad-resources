@@ -1,11 +1,7 @@
 FactoryBot.define do
 
-  sequence :name do |n|
-    "Fake Resource #{n}"
-  end
-
   factory :resource_category do
-    name
+    sequence(:name) { |i| "Fake Resource Category #{i}" }
 
     trait :active do
         active { true }

@@ -8,6 +8,10 @@ FactoryBot.define do
     trait 'bad_email' do
       email { 'bad email' }
     end
+
+    trait 'org_role' do
+      role { 'organization' }
+    end
   end
 
 end
