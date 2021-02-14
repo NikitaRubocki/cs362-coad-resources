@@ -117,7 +117,7 @@ RSpec.describe Ticket, type: :model do
       expect(ticket.captured?).to be_truthy
     end
 
-    it 'it has a string representation that is its id' do
+    it 'has a string representation that is its id' do
       expect(Ticket.new(id: 1).to_s).to eq('Ticket 1')
     end
   end

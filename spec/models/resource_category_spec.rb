@@ -62,7 +62,7 @@ RSpec.describe ResourceCategory, type: :model do
       expect(inactive_rc.inactive?).to be_falsy
     end
   
-    it 'it has a string representation that is its name' do
+    it 'has a string representation that is its name' do
       expect(ResourceCategory.new(name: 'Fake').to_s).to eq('Fake')
     end
   end

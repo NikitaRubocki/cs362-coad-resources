@@ -23,7 +23,7 @@ RSpec.describe Region, type: :model do
       expect(ResourceCategory.unspecified.name).to eq('Unspecified')
     end
   
-    it 'it has a string representation that is its name' do
+    it 'has a string representation that is its name' do
       expect(Region.new(name: 'Fake').to_s).to eq('Fake')
     end
   end  

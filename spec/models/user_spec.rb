@@ -25,12 +25,12 @@ RSpec.describe User, type: :model do
   describe '#' do
     let (:user) { create(:user, email: 'fake@test.com')}
 
-    it 'is sets a default role of organization' do
+    it 'sets a default role of organization' do
       user.set_default_role
       expect(user.role).to eq('organization')
     end
 
-    it 'it has a string representation that is its name' do
+    it 'has a string representation that is its email' do
       expect(user.to_s).to eq('fake@test.com')
     end
   end
