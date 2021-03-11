@@ -30,16 +30,6 @@ RSpec.describe OrganizationsController, type: :controller do
 		end
 		
 		it 'redirects to dashboard' do
-			get :show, params: {id: 'fake'}
-			expect(response).to redirect_to(dashboard_url)
-			get :new
-			expect(response).to redirect_to(dashboard_url)
-			post :create
-			expect(response).to redirect_to(dashboard_url)
-			get :edit, params: {id: 'fake'}
-			expect(response).to redirect_to(dashboard_url)
-			put :update, params: {id: 'fake'}
-			expect(response).to redirect_to(dashboard_url)
 			post :approve, params: {id: 'fake'}
 			expect(response).to redirect_to(dashboard_url)
 			post :reject, params: {id: 'fake'}
