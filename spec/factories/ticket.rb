@@ -4,7 +4,6 @@ FactoryBot.define do
     sequence(:name) { |i| "Fake Ticket #{i}" }
     phone { '+15414541232' }
     description { 'Lorem ipsum' }
-    organization
     resource_category
     region
 
@@ -16,7 +15,11 @@ FactoryBot.define do
       closed { true }
     end
 
-    trait "nil_org" do 
+    trait 'valid_org' do
+      organization
+    end
+
+    trait 'nil_org' do 
       organization { nil }
     end
 
