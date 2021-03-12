@@ -33,8 +33,8 @@ RSpec.describe Ticket, type: :model do
 
   describe 'scope' do
     let (:open_ticket_nil_org) { create(:ticket, :open, :nil_org)}
-    let (:open_ticket) { create(:ticket, :open)}
-    let (:closed_ticket) { create(:ticket, :closed)}
+    let (:open_ticket) { create(:ticket, :open, :valid_org)}
+    let (:closed_ticket) { create(:ticket, :closed, :valid_org)}
 
     describe 'open' do
       it 'includes open tickets and does not include closed tickets' do
@@ -105,7 +105,7 @@ RSpec.describe Ticket, type: :model do
   end
 
   describe '#' do
-    let (:ticket) { create(:ticket, :open) }
+    let (:ticket) { create(:ticket, :open, :valid_org) }
 
     it 'is open when its closed attribute is false' do
       expect(ticket.open?).to be_truthy
