@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Deleting a Resource Category', type: :feature do
 
-	let(:admin) { create(:user, :admin_role) }
+  let(:admin) { create(:user, :admin_role) }
 
   it 'deletes a resource category' do
 		category = create(:resource_category)
