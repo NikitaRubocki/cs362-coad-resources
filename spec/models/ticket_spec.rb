@@ -95,7 +95,7 @@ RSpec.describe Ticket, type: :model do
     describe 'resource_category' do
       let (:resource_category) { create(:resource_category) }
       let (:rc_ticket) { create(:ticket, resource_category: resource_category) }
-      it 'includes all tickets with region id' do
+      it 'includes all tickets with resource category id' do
         results = Ticket.region(resource_category.id)
         expect(results).to include(rc_ticket)
         expect(results).to_not include(open_ticket)
