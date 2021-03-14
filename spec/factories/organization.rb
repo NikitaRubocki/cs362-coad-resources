@@ -17,6 +17,10 @@ FactoryBot.define do
       status { :approved }
     end
 
+    trait 'submitted' do
+      status { :submitted }
+    end
+
     trait 'rejected' do
       status { :rejected }
     end
